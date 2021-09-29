@@ -1,0 +1,29 @@
+<div class="d-flex justify-content-center">
+  <div class="col-4">
+    <h1>
+      <%= @restaurant.name %>
+      <%= link_to '✏️', new_restaurant_review_path(@restaurant) ,:style =>"text-decoration:none; font-size:17px" %>
+    </h1>
+    <hr>
+    <article>
+      <div>
+        <%= "#{@restaurant.address} #{@restaurant.category}" %>
+        <%=  %>
+      </div>
+    </article>
+    <hr>
+    <h2>Reviews</h2>
+    <hr>
+    <% @restaurant.reviews.each do |review| %>
+      <div class="card">
+        <div class="card-header">
+          <%= "*" * review.rating %>
+        </div>
+        <div class="card-body">
+          <p class="card-text"><%= review.content %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>

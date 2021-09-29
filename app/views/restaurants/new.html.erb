@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-center">
+  <div class="col-4">
+    <%= simple_form_for [ @restaurant ] do |f| %>
+
+      <%= f.input :name %>
+      <%= f.label :name %>
+      <%= f.input :address %>
+      <%= f.label :address %>
+      <%= f.input :category, collection: Restaurant::CATEGORIES%>
+      <%= f.label :category %>
+      <%= f.submit "Submit review", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

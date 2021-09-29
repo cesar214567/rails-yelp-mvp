@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-center">
+  <div>
+    <% @restaurants.each do |restaurant| %>
+      <div>
+        <h1><%= link_to restaurant.name, restaurant_path(restaurant) %></h1>
+        <h4><%= restaurant.address %></h4>
+        <h4><%= restaurant.category %></h4>
+      </div>
+    <% end %>
+  </div>
+
+</div>
